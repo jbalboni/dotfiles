@@ -1,0 +1,33 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Jeff Balboni
+	email = jeff@adhocteam.us
+	signingkey = 1524BE7E9C2110EF
+[core]
+	excludesfile = ~/.gitignore
+	editor = /usr/local/bin/vim
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+# [diff]
+#   tool = default-difftool
+# [difftool "default-difftool"]
+#   cmd = "~/.vim/mvimgitdiff.sh " $LOCAL $REMOTE
+# [mergetool "mvimdiff"]
+#   cmd="/Applications/MacVim.app/Contents/MacOS/Vim -g -f '+windo set diff scrollbind scrollopt+=hor nowrap' -c 'Gdiff' $MERGED -c 'au VimLeave * !open -a iTerm'"
+#   # cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
+#   keepbackup=false
+#
+# [merge]
+#   tool = mvimdiff
+[alias]
+  co = checkout
+  ca = commit -am
+  mm = merge master
+  b = checkout -b
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
+  pub = "!git push -u origin $(git branch-name)"
+[commit]
+	gpgsign = true
