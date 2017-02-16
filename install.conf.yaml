@@ -7,10 +7,10 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
-    ~/.vim: .vim
+    ~/.vim: vim
     ~/.zshrc: zshrc
     ~/iterm2_profile: iterm2_profile
-    ~/.itermocil: .itermocil
+    ~/.itermocil: itermocil
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
