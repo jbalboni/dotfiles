@@ -1,0 +1,10 @@
+windows:
+  - name: split
+    root: .
+    layout: even-horizontal
+    panes:
+     - commands:
+       - ls -alrt
+     - commands:
+       - vim .
+       focus: true

@@ -1,0 +1,10 @@
+windows:
+  - name: vets-website
+    root: ~/adhoc/vets-json-schema
+    layout: even-horizontal
+    panes:
+     - commands:
+       - git status
+     - commands:
+       - vim .
+       focus: true

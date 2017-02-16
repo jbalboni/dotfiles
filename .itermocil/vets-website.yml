@@ -1,0 +1,12 @@
+windows:
+  - name: vets-website
+    root: ~/adhoc/vets-website
+    layout: main-vertical-flipped
+    panes:
+     - commands:
+       - git status
+     - commands:
+       - npm run watch -- --entry hca,edu-benefits,disability-benefits,no-react --host 0.0.0.0
+     - commands:
+       - vim .
+       focus: true

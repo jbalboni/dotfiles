@@ -1,0 +1,84 @@
+snippet rfp
+import React from 'react';
+
+export default function $1($2) {
+	$0
+}
+
+$1.propTypes = {
+	$3
+};
+endsnippet
+snippet rf
+import React from 'react';
+
+export default function $1($2) {
+	$0
+}
+endsnippet
+snippet rc
+import React from 'react';
+
+export default class $1 extends React.Component {
+	render() {
+		$0
+	}
+}
+endsnippet
+snippet rcp
+import React from 'react';
+
+export default class $1 extends React.Component {
+	render() {
+		$0
+	}
+}
+
+$1.propTypes = {
+	$2
+}
+endsnippet
+snippet con
+constructor($1) {
+	super($1);
+	$0
+}
+endsnippet
+snippet im
+import $1 from '$2';
+endsnippet
+snippet <
+<$1>$0</$1>
+endsnippet
+snippet it
+it('$1', () => {
+	$0
+});
+endsnippet
+snippet desc
+describe('$1', () => {
+	it('$2', () => {
+		$0
+	});
+});
+endsnippet
+snippet tr
+import React from 'react';
+import { expect } from 'chai';
+import SkinDeep from 'skin-deep';
+
+import $1 from '$2';
+
+describe('$3', () => {
+	$0
+});
+endsnippet
+snippet tj
+import { expect } from 'chai';
+
+import $1 from '$2';
+
+describe('$3', () => {
+	$0
+});
+endsnippet

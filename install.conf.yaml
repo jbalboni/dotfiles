@@ -1,10 +1,17 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - link:
-    ~/.bash_profile: bash_profile
-    ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
+    ~/.vim: .vim
     ~/.zshrc: zshrc
+    ~/iterm2_profile: iterm2_profile
+    ~/.itermocil: .itermocil
 
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
 
