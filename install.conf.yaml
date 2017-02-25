@@ -11,6 +11,8 @@
     ~/.zshrc: zshrc
     ~/iterm2_profile: iterm2_profile
     ~/.itermocil: itermocil
+    ~/.config: config
+    ~/.npmrc: npmrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

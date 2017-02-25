@@ -15,25 +15,25 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vim'
 fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-MODE_INDICATOR="%{$fg_bold[red]%}[N]%{$fg[red]%}%{$reset_color%}"
-INSERT_MODE_INDICATOR="[I]"
-function vi_mode_prompt_info() {
-  echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/$INSERT_MODE_INDICATOR}"
-}
-
-PROMPT='$(vi_mode_prompt_info) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)> '
-RPROMPT=""
-
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+# MODE_INDICATOR="%{$fg_bold[red]%}[N]%{$fg[red]%}%{$reset_color%}"
+# INSERT_MODE_INDICATOR="[I]"
+# function vi_mode_prompt_info() {
+#   echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/$INSERT_MODE_INDICATOR}"
+# }
+#
+# PROMPT='$(vi_mode_prompt_info) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)$ '
+# RPROMPT=""
+#
+# ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
+# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 alias prof="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
@@ -41,3 +41,9 @@ alias unit="npm run test:unit"
 alias e2e="npm run test:e2e"
 
 export KEYTIMEOUT=1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=5
+powerline-daemon -q
+. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
