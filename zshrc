@@ -6,7 +6,9 @@ export ZSH=/Users/jbalboni/.oh-my-zsh
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git nvm vi-mode zsh-autosuggestions)
+plugins=(git nvm vi-mode zsh-autosuggestions ssh-agent)
+
+zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_adhoc
 
 source $ZSH/oh-my-zsh.sh
 
