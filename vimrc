@@ -23,8 +23,11 @@ Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'dyng/ctrlsf.vim'
-Plug 'JamshedVesuna/vim-markdown-preview'
-
+Plug 'heavenshell/vim-jsdoc'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+" Plug 'flowtype/vim-flow'
+" Plug 'llimllib/js-prettier'
 "
 "
 " Add plugins to &runtimepath
@@ -49,28 +52,20 @@ set scrolloff=5
 set laststatus=2
 set incsearch
 
-let g:ctrlp_user_command= 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.orig"
-      \ --ignore "**/*.swp"
-      \ --ignore "**/*.swo"
-      \ -g ""'
-
 set grepprg=rg\ --vimgrep
 let g:ctrlsf_ackprg = 'rg'
 
-let g:ale_linters = { 'javascript': ['eslint'] }
+let g:ale_linters = { 'javascript': ['eslint'], 'elixir': [] }
 let g:ale_sign_column_always = 1
 
 let g:jsx_ext_required = 0
-let g:javascript_plugin_flow = 1
+let g:javascript_plugin_flow = 0
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#branch#enabled = 0
+
+let g:jsdoc_enable_es6 = 1
 
 imap <expr> <CR> pumvisible() ? "\<c-y>" : "<Plug>delimitMateCR"
 
@@ -86,6 +81,9 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+set pastetoggle=<leader>p
+set spelllang=en
+set spell
 
 if $TERM_PROGRAM =~ "iTerm"
   let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
@@ -93,21 +91,16 @@ if $TERM_PROGRAM =~ "iTerm"
 endif"
 
 nnoremap <leader>f :Files<CR>
-nnoremap <leader>r :CtrlPClearCache<CR>
 nnoremap <leader>g :Buffers<CR>
 nnoremap <leader>a :Find 
-nnoremap <leader>q :lclose<CR>
 
 map <Leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 
 nmap <leader>sw<left>  :topleft  vnew<CR>
 nmap <leader>sw<right> :botright vnew<CR>
 nmap <leader>sw<up>    :topleft  new<CR>
 nmap <leader>sw<down>  :botright new<CR>
-" buffer
-nmap <leader>s<left>   :leftabove  vnew<CR>
-nmap <leader>s<right>  :rightbelow vnew<CR>
-nmap <leader>s<up>     :leftabove  new<CR>
-nmap <leader>s<down>   :rightbelow new<CR>
 
-command! -bang -nargs=* Find call fzf#vim#grep('rg --line-number --no-heading --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1, <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)
+

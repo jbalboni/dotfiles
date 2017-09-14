@@ -1,0 +1,13 @@
+windows:
+  - name: vets-api
+    root: ~/adhoc/vets-api
+    layout: main-vertical-flipped
+    panes:
+     - commands:
+       - git status
+     - commands:
+       - bundle install
+       - bundle exec foreman start
+     - commands:
+       - vim .
+       focus: true

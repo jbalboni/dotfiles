@@ -9,8 +9,13 @@
 	editor = /usr/local/bin/vim
 [merge]
 	tool = kdiff3
+  # tool = mvimdiff
+  # conflictstyle = diff3
 [mergetool "kdiff3"]
 	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[mergetool "mvimdiff"]
+  cmd="/Applications/MacVim.app/Contents/MacOS/Vim -g -f '+windo set diff scrollbind scrollopt+=hor nowrap' -c 'Gdiff' $MERGED -c 'au VimLeave * !open -a iTerm'"
+  prompt = false
 # [diff]
 #   tool = default-difftool
 # [difftool "default-difftool"]

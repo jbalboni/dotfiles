@@ -16,4 +16,6 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [ln -s "$HOME/.config/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"]
+    - [ln -s "$HOME/.config/async.zsh" "$HOME/.zfunctions/async"]
 
