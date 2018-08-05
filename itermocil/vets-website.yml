@@ -4,11 +4,9 @@ windows:
     layout: main-vertical-flipped
     panes:
      - commands:
-       - nvm use v6.11.1
        - git status
      - commands:
-       - nvm use v6.11.1
-       - npm run watch -- --entry hca,edu-benefits,burials,pensions,auth,style,disability-benefits,no-react --host 0.0.0.0
+       - yarn watch
      - commands:
        - vim .
        focus: true

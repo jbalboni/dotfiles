@@ -12,7 +12,7 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-plugins=(git nvm vi-mode zsh-autosuggestions ssh-agent)
+plugins=(git nvm zsh-autosuggestions ssh-agent)
 
 zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_adhoc
 
@@ -64,7 +64,11 @@ function schema() {
   yarn remove vets-json-schema
   yarn add https://github.com/department-of-veterans-affairs/vets-json-schema.git\#$1
 }
-alias serve="nvm exec v7.7.4 ws -p 3001 -z; nvm use v6.11.1"
+function forms() {
+  yarn remove us-forms-system 
+  yarn add https://github.com/usds/us-forms-system.git\#$1
+}
+alias serve="ws -p 3001 -z"
 
 export KEYTIMEOUT=1
 
