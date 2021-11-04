@@ -19,6 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'jxnblk/vim-mdx-js'
 Plug 'w0rp/ale'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'dyng/ctrlsf.vim'
@@ -32,6 +33,8 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 " Plug 'flowtype/vim-flow'
 " Plug 'llimllib/js-prettier'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'evanleck/vim-svelte'
 "
 "
 " Add plugins to &runtimepath
@@ -92,7 +95,7 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
-set pastetoggle=<leader>p
+set pastetoggle=<leader>o
 set spelllang=en
 
 if $TERM_PROGRAM =~ "iTerm"
