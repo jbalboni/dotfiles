@@ -3,7 +3,6 @@
 # Please adapt and uncomment the following lines:
 	name = Jeff Balboni
 	email = jeff@adhocteam.us
-	signingkey = 1524BE7E9C2110EF
 [core]
 	excludesfile = ~/.gitignore
 	editor = /usr/local/bin/vim
